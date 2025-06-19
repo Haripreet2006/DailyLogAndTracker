@@ -43,7 +43,7 @@
             // 
             Menu.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             Menu.AutoSize = true;
-            Menu.BackColor = Color.FromArgb(24, 18, 43);
+            Menu.BackColor = Color.FromArgb(9, 0, 38);
             Menu.Controls.Add(NukeBtn);
             Menu.Controls.Add(WeeklyBtn);
             Menu.Controls.Add(DailyBtn);
@@ -51,8 +51,9 @@
             Menu.Controls.Add(HomeBtn);
             Menu.Location = new Point(-7, -4);
             Menu.Name = "Menu";
-            Menu.Size = new Size(248, 568);
+            Menu.Size = new Size(248, 595);
             Menu.TabIndex = 0;
+            Menu.Paint += Menu_Paint;
             // 
             // NukeBtn
             // 
@@ -62,12 +63,13 @@
             NukeBtn.FlatStyle = FlatStyle.Flat;
             NukeBtn.Font = new Font("Bahnschrift SemiCondensed", 20.25F);
             NukeBtn.ForeColor = Color.White;
-            NukeBtn.Location = new Point(0, 481);
+            NukeBtn.Location = new Point(0, 508);
             NukeBtn.Name = "NukeBtn";
             NukeBtn.Size = new Size(248, 87);
             NukeBtn.TabIndex = 4;
             NukeBtn.Text = "NUKE DATA!!";
             NukeBtn.UseVisualStyleBackColor = false;
+            NukeBtn.Click += NukeBtn_Click;
             // 
             // WeeklyBtn
             // 
@@ -87,7 +89,7 @@
             // 
             // DailyBtn
             // 
-            DailyBtn.BackColor = Color.FromArgb(24, 18, 43);
+            DailyBtn.BackColor = Color.FromArgb(9, 0, 38);
             DailyBtn.Dock = DockStyle.Top;
             DailyBtn.FlatAppearance.BorderSize = 0;
             DailyBtn.FlatStyle = FlatStyle.Flat;
@@ -119,7 +121,7 @@
             // 
             // HomeBtn
             // 
-            HomeBtn.BackColor = Color.FromArgb(24, 18, 43);
+            HomeBtn.BackColor = Color.FromArgb(9, 0, 38);
             HomeBtn.Dock = DockStyle.Top;
             HomeBtn.FlatAppearance.BorderSize = 0;
             HomeBtn.FlatStyle = FlatStyle.Flat;
@@ -134,9 +136,10 @@
             // Content
             // 
             Content.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            Content.Location = new Point(238, 0);
+            Content.BackColor = Color.FromArgb(24, 18, 43);
+            Content.Location = new Point(241, 0);
             Content.Name = "Content";
-            Content.Size = new Size(546, 561);
+            Content.Size = new Size(901, 588);
             Content.TabIndex = 1;
             // 
             // Form1
@@ -145,7 +148,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             BackColor = Color.FromArgb(46, 2, 73);
-            ClientSize = new Size(784, 561);
+            ClientSize = new Size(1142, 588);
             Controls.Add(Menu);
             Controls.Add(Content);
             MinimumSize = new Size(800, 600);

@@ -1,4 +1,10 @@
+using DailyLogAndTracker.Forms;
+using DailyLogAndTracker.Helper;
+using System.Data.SQLite;
 using System.Runtime.InteropServices.Marshalling;
+using System.Text.Json;
+using System.Text.RegularExpressions;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace DailyLogAndTracker
 {
@@ -7,15 +13,16 @@ namespace DailyLogAndTracker
         public Form1()
         {
             InitializeComponent();
+            LoadForm(new Diet());
         }
 
         private void HomeBtn_Click(object sender, EventArgs e)
         {
-            LoadForm(new Home());
+
         }
 
         private void DailyBtn_Click(object sender, EventArgs e)
-        { 
+        {
             LoadForm(new Daily());
         }
 
@@ -44,6 +51,29 @@ namespace DailyLogAndTracker
         private void DailyBtn_Click_1(object sender, EventArgs e)
         {
             LoadForm(new Daily());
+        }
+
+        private void Menu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Content_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private async void NukeBtn_Click(object sender, EventArgs e)
+        {
+            using (var conn = DBHelper.GetConnection())
+            {
+                conn.Open();
+                string sSQL = "DELETE FROM Daily; DELETE FROM Weekly; DELETE FROM diet";
+                using (var InsertCmd = new SQLiteCommand(sSQL, conn))
+                {
+                    InsertCmd.ExecuteNonQuery();
+                }
+            }
         }
     }
 }
