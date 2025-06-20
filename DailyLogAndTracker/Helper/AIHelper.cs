@@ -13,7 +13,7 @@ namespace DailyLogAndTracker.Helper
     {
         private static string GetAPIKey()
         {
-            string json = File.ReadAllText(Path.Combine(AppContext.BaseDirectory, @"..\..\..\config.json"));
+            string json = File.ReadAllText(Path.Combine(AppContext.BaseDirectory, "config.json"));
             var Jsondoc = JsonDocument.Parse(json);
             return Jsondoc.RootElement.GetProperty("GroqAPIkey").GetString();
         }

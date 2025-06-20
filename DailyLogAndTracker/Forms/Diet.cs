@@ -132,6 +132,8 @@ namespace DailyLogAndTracker
             {
                 MessageBox.Show("Error: " + ex.Message, "failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            FoodInp.Clear();
         }
 
         private void LoadDGV()
@@ -325,6 +327,10 @@ namespace DailyLogAndTracker
                 if (tempCB >= Properties.Settings.Default.Carbohydrates && tempPR >= Properties.Settings.Default.Protiens && tempFT >= Properties.Settings.Default.Fats && tempCL >= Properties.Settings.Default.Calories)
                 {
                     count++;
+                }
+                else
+                {
+                    count = 0;
                 }
             }
 

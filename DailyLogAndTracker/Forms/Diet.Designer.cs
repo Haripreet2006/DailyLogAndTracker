@@ -98,6 +98,7 @@
             // FoodInp
             // 
             FoodInp.Dock = DockStyle.Fill;
+            FoodInp.Font = new Font("Segoe UI", 15F);
             FoodInp.Location = new Point(0, 0);
             FoodInp.Name = "FoodInp";
             FoodInp.Size = new Size(1093, 74);

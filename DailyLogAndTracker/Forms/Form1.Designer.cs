@@ -151,6 +151,7 @@
             ClientSize = new Size(1142, 588);
             Controls.Add(Menu);
             Controls.Add(Content);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MinimumSize = new Size(800, 600);
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
